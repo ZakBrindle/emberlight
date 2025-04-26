@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmberLight Studio - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <a href="#home" class="logo">
+                <img src="./images/EmberLight Studio Square.png" alt="">
+                <span>EmberLight Studio</span>
+            </a>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#game">Elgar's Revenge</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+             <button class="hamburger" id="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+     <nav class="mobile-nav" id="mobile-nav-menu">
+         <ul>
+             <li><a href="#home" class="mobile-nav-link">Home</a></li>
+             <li><a href="#game" class="mobile-nav-link">Elgar's Revenge</a></li>
+             <li><a href="#about" class="mobile-nav-link">About</a></li>
+             <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+         </ul>
+    </nav>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-image-area">
+                </div>
+
+            <div class="hero-content-area">
+                <div class="container"> 
+                    <p class="subtitle">Forging worlds, igniting adventures.</p>
+                    <a href="#game" class="cta-button">Discover Elgar's Revenge</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="game" class="game-section">
+            <div class="container">
+                <h2>Elgar's Revenge</h2>
+
+                <div style="margin-bottom: 10px;" class="col-md-6 animate-box">
+                    <iframe 
+                        width="100%" 
+                        height="315" 
+                        src="https://www.youtube.com/embed/spD8SxMdsDo?si=piI-8zLiKFE7LBng" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="game-intro">
+                   
+
+                    <p>An open-world survival role-playing game set on an island ravaged by a goblin onslaught. Play as Elgar, a survivor seeking revenge while rebuilding his life in a hostile world.</p>
+                </div>
+                <div class="game-details">
+                    <article>
+                        <h3>Core Concept & Plot</h3>
+                        <p>Elgar, a young fisherman, and his friend Clay survive their village's destruction by goblins, landing on an uncharted island. While Clay gathers resources near the shore, Elgar must explore, survive, master skills, gather allies, and ultimately confront the goblin menace that shattered his past.</p>
+                    </article>
+                    <article>
+                        <h3>Gameplay Highlights</h3>
+                        <ul>
+                            <li><strong>Character Progression:</strong> Level up Elgar's diverse stats (HP, Stamina, Combat Skills, Crafting Skills like Woodcutting, Fishing, Smithing, etc.). Gain XP through combat, quests, and activities.</li>
+                            <li><strong>NPC Companion:</strong> Your friend Clay gathers resources automatically, leveling up to find better items and expand his range. Craft storage for him!</li>
+                            <li><strong>Exploration & Survival:</strong> Freely roam the island, gathering essential wood, stone, food, and water.</li>
+                            <li><strong>Crafting System:</strong> Use a hammer and crafting bench to create tools, weapons, shelter (including a basic house), and eventually a boat for further exploration.</li>
+                            <li><strong>Questing:</strong> Undertake main and side quests from various NPCs, managed via a quest log (max 3 active).</li>
+                            <li><strong>Combat:</strong> Battle goblins, skeletons, and more using melee, ranged, or magic skills. Equip swords, bows, staffs, and armor.</li>
+                        </ul>
+                    </article>
+                    <article>
+                        <h3>Epic Storyline</h3>
+                        <p>Follow Elgar's journey from a desperate survivor to a beacon of hope. Forge alliances with human and elven kingdoms, confront skeletal threats, prove your worth, and unite forces for a final, climactic battle against the goblin king. The adventure continues with a cliffhanger leading towards future tales...</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2>About the Developer</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Hi, I'm the sole developer behind EmberLight Studio and Elgar's Revenge. With a background in software development (BSc Computer Games Development, University of Central Lancashire) and diverse experience ranging from Technical Support at OneUp and sales at Microsoft & LG to specialist headhunting, I bring a unique blend of technical skill, problem-solving, and dedication to this project.</p>
+                        <p>Elgar's Revenge is a passion project, 5 years in the making, combining features from the games I loved growing up. It's built using Unity3D.</p>
+                        <p>Beyond game development, I'm also passionate about music, writing and producing tracks in my spare time (ask me about my "MADE AT HOME" EP!).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2>Get In Touch</h2>
+                
+                <form action="#" method="post" class="contact-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> EmberLight Studio. All rights reserved.</p>
+            </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

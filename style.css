@@ -1,0 +1,444 @@
+/* Basic Reset & Font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #1a1a1a;
+    --primary-accent: #f07e1e; /* Orange Flame */
+    --secondary-accent: #e0c9a6; /* Light Gold/Cream Text */
+    --text-color: #f5f5f5; /* Off-white */
+    --card-bg: #2a2a2a;
+    --border-color: #444;
+    --hero-content-bg: #16181A; /* Specific background for hero content */
+}
+
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for internal links */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header & Navigation */
+header {
+    background-color: rgba(26, 26, 26, 0.9); /* Slightly transparent dark bg */
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+nav.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--secondary-accent);
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.logo img {
+    height: 40px; /* Adjust as needed */
+    margin-right: 10px;
+    border-radius: 4px; /* Slightly rounded corners for the logo */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active { /* Add 'active' class with JS if needed */
+    color: var(--primary-accent);
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none; /* Hidden by default */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Mobile Nav */
+.mobile-nav {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 68px; /* Adjust based on header height */
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-color);
+    padding: 1rem 0;
+    z-index: 999;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.mobile-nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+.mobile-nav ul li {
+    margin: 15px 0;
+}
+
+.mobile-nav ul li a {
+     color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: block; /* Make link take full width */
+    padding: 5px 0;
+}
+.mobile-nav ul li a:hover {
+    color: var(--primary-accent);
+}
+
+/* Main Content Sections */
+main {
+    padding-top: 80px; /* Adjust based on header height */
+}
+
+section {
+    padding: 60px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+section:last-of-type{
+     border-bottom: none;
+}
+
+
+/* Hero Section */
+.hero {
+    padding: 0; /* Remove padding to allow inner divs to fill */
+    border-bottom: none; /* Remove the previous border */
+    position: relative; /* Keep for potential future use */
+}
+
+/* Part 1: Image Background Area */
+.hero-image-area {
+    min-height: 50vh; /* Your desired minimum height for this area */
+    width: 100%;
+    display: block; /* Keep this */
+    
+
+    /* Set the background color FIRST */
+    /* This color will fill the entire area and show where the image doesn't reach */
+    background-color: #16181A; /* Or use var(--hero-content-bg) if it's defined */
+
+    /* THEN, specify the image */
+    background-image: url('./images/hero.png');
+
+    /* Position the image within the area */
+    background-position: center center;
+
+    /* Ensure the image doesn't tile */
+    background-repeat: no-repeat;
+
+    /* --- KEY CHANGE --- */
+    /* Scale the image to fit *inside* the container, preserving aspect ratio */
+    background-size: contain;
+}
+
+/* Part 2: Content Area with Solid Background */
+.hero-content-area {
+    background-color: var(--hero-content-bg); /* Use variable */
+    padding: 4rem 0; /* Add vertical padding inside this area (adjust as needed) */
+    text-align: center; /* Center the text within the container */
+    position: relative; /* Needed if you want pseudo-elements later */
+    /* Add a subtle border matching the color to prevent potential 1px gaps */
+    border-top: 1px solid var(--hero-content-bg);
+    margin-top: -1px; /* Pull up slightly to ensure overlap with the border */
+    border-bottom: 2px solid var(--primary-accent);
+}
+
+/* Styles for content *within* the hero-content-area */
+.hero-content-area h1 {
+    font-size: 3.5rem;
+    color: var(--secondary-accent);
+    margin-bottom: 1rem; /* Adjust spacing */
+    font-weight: 700;
+}
+
+.hero-content-area .subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem; /* Adjust spacing */
+    color: var(--text-color);
+    font-weight: 300;
+}
+
+/* Ensure the container inside the hero content area still works */
+.hero-content-area .container {
+    /* Container class already handles max-width and margin: auto */
+    /* No additional styles needed unless specific overrides required */
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-accent);
+    color: var(--bg-color);
+    padding: 12px 25px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none; /* Make it look like a button */
+    cursor: pointer; /* Ensure cursor changes */
+    font-size: 1rem; /* Match form button */
+}
+
+.cta-button:hover {
+    background-color: #ff8c00; /* Slightly lighter orange on hover */
+    transform: translateY(-2px);
+}
+
+/* General Section Styling */
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--secondary-accent);
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1.8rem;
+    color: var(--primary-accent);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+p, ul li {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+ul {
+    list-style-position: inside; /* Indent list items */
+    padding-left: 10px;
+}
+
+ul li strong {
+    color: var(--secondary-accent);
+    font-weight: 600;
+}
+
+article {
+    background-color: var(--card-bg);
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-left: 4px solid var(--primary-accent);
+}
+
+/* Game Section Specifics */
+.game-section .game-intro {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.game-section .game-intro p {
+     max-width: 800px;
+     margin-left: auto;
+     margin-right: auto;
+     font-size: 1.1rem;
+}
+.game-banner { /* Style if you add a banner image */
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.game-details {
+    /* Could use grid for layout later */
+}
+
+/* Media Gallery Placeholder */
+.media-gallery {
+    margin-top: 40px;
+}
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease;
+}
+.gallery-grid img:hover {
+    transform: scale(1.05);
+}
+
+
+/* About Section Specifics */
+.about-section .about-content {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+    gap: 30px; /* Space between text and potential photo */
+}
+
+.about-section .about-text {
+    flex: 1; /* Text takes available space */
+}
+
+.about-section .dev-photo { /* Style if you add a photo */
+    max-width: 250px;
+    height: auto;
+    border-radius: 50%; /* Circular photo */
+    border: 3px solid var(--primary-accent);
+}
+
+.social-link {
+    display: inline-block;
+    margin-right: 15px;
+    color: var(--primary-accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+.social-link:hover {
+    text-decoration: underline;
+}
+
+/* Contact Section */
+.contact-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+}
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: var(--secondary-accent);
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border-radius: 4px;
+    font-family: inherit;
+}
+.contact-form textarea {
+    resize: vertical; /* Allow vertical resizing */
+}
+.contact-form button {
+    /* Inherits .cta-button styles */
+    width: 100%;
+}
+
+
+/* Footer */
+footer {
+    background-color: #111; /* Even darker footer */
+    color: #aaa;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px; /* Ensure some space before footer */
+}
+
+footer p {
+    margin-bottom: 10px;
+    color: #aaa; /* Override default p color */
+}
+
+footer .social-links a {
+    color: #aaa;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer .social-links a:hover {
+    color: var(--primary-accent);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    .hero .subtitle {
+        font-size: 1.2rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        display: none; /* Hide desktop nav */
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger */
+    }
+
+    .about-section .about-content {
+        flex-direction: column; /* Stack text and photo */
+        align-items: center;
+        text-align: center;
+    }
+     .about-section .dev-photo {
+         margin-top: 20px;
+     }
+
+    .logo span {
+         font-size: 1.2rem; /* Smaller logo text */
+    }
+     .logo img {
+         height: 35px; /* Slightly smaller logo */
+    }
+}
